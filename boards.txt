@@ -1,0 +1,62 @@
+# Copyright (c) 2022 jolly-dev. All right reserved.
+#
+# This library is free software; you can redistribute it and/or
+# modify it under the terms of the GNU Lesser General Public
+# License as published by the Free Software Foundation; either
+# version 2.1 of the License, or (at your option) any later version.
+#
+# This library is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+# See the GNU Lesser General Public License for more details.
+#
+# You should have received a copy of the GNU Lesser General Public
+# License along with this library; if not, write to the Free Software
+# Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA  02110-1301  USA
+
+# See: http://code.google.com/p/arduino/wiki/Platforms
+
+menu.cpu=Bootloader
+
+jolly.name=Jolly
+jolly.build.board=jolly
+
+#--------------------------------------------------------------------------------------#
+#                                ATMEGA 328PB
+#--------------------------------------------------------------------------------------#
+
+jolly.build.mcu=atmega328pb
+jolly.build.f_cpu=16000000L
+jolly.build.core=atmega328pb
+jolly.build.variant=mega328pb
+#jolly.build.extra_flags=-include {runtime.platform.path}/variants/mega328pb/iom328pb.h
+jolly.build.extra_flags=
+
+jolly.upload.tool=arduino:avrdude
+jolly.upload.protocol=arduino
+jolly.upload.mcu=atmega328pb
+jolly.upload.maximum_size=32256
+jolly.upload.maximum_data_size=2048
+jolly.upload.speed=115200
+
+jolly.menu.cpu.avr=AVR 328p
+jolly.menu.cpu.avr.bootloader.tool=arduino:avrdude
+jolly.menu.cpu.avr.bootloader.low_fuses=0xFF
+jolly.menu.cpu.avr.bootloader.high_fuses=0xDC
+jolly.menu.cpu.avr.bootloader.extended_fuses=0xFD
+jolly.menu.cpu.avr.bootloader.unlock_bits=0x3F
+jolly.menu.cpu.avr.bootloader.lock_bits=0x0F
+jolly.menu.cpu.avr.bootloader.file=CustomOptiboot328pb/Debug/CustomOptiboot328pb.hex
+
+
+jolly.menu.cpu.esp=ESP8285
+jolly.menu.cpu.esp.bootloader.tool=esptool_py
+jolly.menu.cpu.esp.bootloader.file=CustomOptiboot328pb/Debug/CustomOptiboot328pb.hex
+jolly.menu.cpu.esp.bootloader.file_esp=0x00000 "{runtime.platform.path}/firmwares/jolly_esp/WiFiManager.bin" 0xCB000 "{runtime.platform.path}/firmwares/jolly_esp/WiFiManager_spiffs.bin"
+
+jolly.build.preproc.includes.flags=-w -x c++ -M -MG -MP
+jolly.build.preproc.macros.flags=-w -x c++ -E -CC
+
+jolly.build.recipe.size.regex=(?:\.text|\.data|\.bootloader)\s+([0-9]+).*
+jolly.build.recipe.size.regex.data=^(?:\.data|\.bss|\.noinit)\s+([0-9]+).*
+
