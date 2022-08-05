@@ -28,7 +28,7 @@ The firmware is composed by two files: WiFiManager.bin and WiFiManager_spiff.bin
 In case the firmware needs to be updated for any reason, there is a specific semi-automatic procedure to follow:
   - in Arduino IDE select the tools menu
   - choose ESP8285 for the bootloader option as shown in the picture below![](/bootimg.png)
-  - press the boot button located on the Jolly module. While holding it pressed, press the reset button on the Arduino UNO for 1 second, then release it. Keep holding the boot button for 1 second longer, then release it ![](/boot_sequence.png). Now the Jolly is entered in the boot mode for the ESP8285
+  - press the boot button located on the Jolly module. While holding it pressed, press the reset button on the Arduino UNO for 1 second, then release it. Keep holding the boot button for 1 second longer, then release it ![](/boot_sequence.png) Now the Jolly is entered in the boot mode for the ESP8285
   - finally click on **burn bootloader** option and the procedure will start automatically
 
 **Hint**: to keep track of the update process, enable both the **compilation** and **upload** radio button in the **show verbose output during:** option located in the file menu Preferences tab of the Arduino IDE
