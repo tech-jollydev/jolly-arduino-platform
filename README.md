@@ -2,17 +2,21 @@
 
 ### Contents
   - [Documentation](#documentation)
-  - [Issue/Bug report template](#issuebug-report-template)
+  - [Issue/Bug report](#issuebug-report)
 
 ### Documentation
 
 **Getting Started**
+
 Jolly is a new electronic module for makers and Arduino UNO lovers. 
 The module has integrated Wi-Fi, to infinitely extend the potential of your projects into the new world of IoT.
 You only need to remove the ATMEGA328P microcontroller, replace it with the Jolly module and you will have an IoT board with Wi-Fi.
 To date, all the existing projects are mutually compatible.
 
 **Installing (Windows, Linux and macOS)**
+
+Make sure your Arduino IDE version is 1.8.13 or greater.
+
 To install the Jolly AVR platform in the Arduino IDE it is necessary to follow the following steps:
   - select the Preferences tab in the file menu
   - add the following two links to the **Additional Boards Manager URLs**
@@ -23,6 +27,7 @@ To install the Jolly AVR platform in the Arduino IDE it is necessary to follow t
   - now the platform can be installed
 
 **Reload the ESP8285 default firmware**
+
 A pre-compiled version of the default ESP8285 firmware is available under the path /firmwares/jolly_esp/
 The firmware is composed by two files: WiFiManager.bin and WiFiManager_spiff.bin
 In case the firmware needs to be updated for any reason, there is a specific semi-automatic procedure to follow:
@@ -33,8 +38,6 @@ In case the firmware needs to be updated for any reason, there is a specific sem
 
 **Hint**: to keep track of the update process, enable both the **compilation** and **upload** radio button in the **show verbose output during:** option located in the file menu Preferences tab of the Arduino IDE
 
-**Troubleshooting**
-
-### Issue/Bug report template
-Before reporting an issue, make sure you've searched for similar one that was already created.
+### Issue/Bug report
+You can use **Issues** section of this repository to report an error. Before reporting an issue, make sure you've searched for similar one that was already created.
 Finally, and only for severe issues, write an e-mail to tech@jolly-dev.com
