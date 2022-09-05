@@ -311,6 +311,11 @@ class WiFiClass
 	*/
 	int hostByName(const char* aHostname, IPAddress& aResult);
 
+	/*
+	* Disable default web server at port 80 (pin control feature will be unavailable).
+	*/
+	void disableWebPanel();
+
 	friend class WiFiClient;
 	friend class WiFiServer;
 	friend void wifiDrvCB(void);

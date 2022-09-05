@@ -235,6 +235,8 @@ public:
 
     static bool getClientState(uint8_t sock);
 
+	static bool disableWebPanel();
+
 	static bool getAvailable(uint8_t sock);
 
     static bool getData(uint8_t sock, uint8_t peek = 0);

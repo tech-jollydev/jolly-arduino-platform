@@ -280,6 +280,12 @@ bool Packager::getClientState(uint8_t sock)
 }
 
 // -----------------------------------------------------------------
+bool Packager::disableWebPanel()
+{
+	return commDrv.sendCmd(DISABLE_WEBPANEL, PARAM_NUMS_0);
+}
+
+// -----------------------------------------------------------------
 bool Packager::getAvailable(uint8_t sock){
 	commDrv.sendCmd(AVAIL_DATA_TCP_CMD, PARAM_NUMS_1);
 	return commDrv.sendParam(&sock, sizeof(sock), LAST_PARAM);

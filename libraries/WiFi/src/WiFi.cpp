@@ -1096,6 +1096,22 @@ int WiFiClass::hostByName(const char* aHostname, IPAddress& aResult)
 	return result;
 }
 
+
+void WiFiClass::disableWebPanel()
+{
+	handleEvents();
+
+	gotResponse = false;
+	responseType = NONE;
+
+	if(!Packager::disableWebPanel()){ // packet has not been sent. Maybe an interrupt occurred in the meantime
+		// launch interrupt management function, then try to send request again
+		handleEvents();
+		if(!Packager::disableWebPanel()) // exit if another error occurs
+			return;
+	}
+}
+
 void WiFiClass::reset()
 {
 	commDrv.reset();

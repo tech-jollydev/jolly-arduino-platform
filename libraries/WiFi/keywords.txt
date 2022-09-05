@@ -53,6 +53,7 @@ remoteIP	KEYWORD2
 remotePort	KEYWORD2
 reset	KEYWORD2
 init	KEYWORD2
+disableWebPanel	KEYWORD2
 
 #######################################
 # Constants (LITERAL1)
