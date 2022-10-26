@@ -15,7 +15,7 @@ To date, all the existing projects are mutually compatible.
 
 **Installing (Windows, Linux and macOS)**
 
-Make sure your Arduino IDE version is 1.8.13 or greater.
+Make sure your Arduino IDE version is 1.8.13 or higher.
 
 To install the Jolly AVR platform in the Arduino IDE it is necessary to follow the following steps:
   - select the Preferences tab in the file menu
@@ -23,7 +23,7 @@ To install the Jolly AVR platform in the Arduino IDE it is necessary to follow t
     https://tech-jollydev.github.io/package_jolly_index.json
     https://espressif.github.io/arduino-esp32/package_esp32_index.json
   - select the board menu in the tools menu and finally select the boards manager option
-  - by typing **jolly** in the search bar the **Jolly AVR Boards** platform should appears
+  - by typing **jolly** in the search bar the **Jolly AVR Boards** platform should appear
   - now the platform can be installed
 
 **Reload the ESP8285 default firmware**
@@ -37,6 +37,8 @@ In case the firmware needs to be updated for any reason, there is a specific sem
   - finally click on **burn bootloader** option and the procedure will start automatically
 
 **Hint**: to keep track of the update process, enable both the **compilation** and **upload** radio button in the **show verbose output during:** option located in the file menu Preferences tab of the Arduino IDE
+
+Additionally, it is possible to fully customize the code running on ESP8285 by using a dedicated platform available [here](https://github.com/tech-jollydev/jolly-arduino-esp8285-platform).
 
 ### Issue/Bug report
 You can use **Issues** section of this repository to report an error. Before reporting an issue, make sure you've searched for similar one that was already created.
